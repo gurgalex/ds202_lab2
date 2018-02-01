@@ -14,3 +14,12 @@ Choco dataset obtained from [here](https://ds202-at-isu.github.io/labs/data/choc
 choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
 head(choco)
 ```
+
+Questions
+
+
+1. What is the overall number of chocolate bars rated?
+
+2. How does the number of ratings depend on the year? Draw a bar chart of the number of reports.
+
+3. Upload your RMarkdown file to the repository
