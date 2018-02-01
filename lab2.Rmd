@@ -20,6 +20,11 @@ Questions
 
 1. What is the overall number of chocolate bars rated?
 
+```{r}
+chocolate_observations <- dim(choco)[1]
+chocolate_observations
+```
+
 2. How does the number of ratings depend on the year? Draw a bar chart of the number of reports.
 
 3. Upload your RMarkdown file to the repository
