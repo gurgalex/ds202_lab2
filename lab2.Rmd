@@ -1,37 +1,30 @@
----
-title: "chocolate"
-date: "February 1, 2018"
-output: html_document
----
+
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
 ```
+---
+Author: Megan Carpenter, group 1
+Output: html_document
+Title: Lab 2
+---
 
-Choco dataset obtained from [here](https://ds202-at-isu.github.io/labs/data/choco.csv)
-
-```{r}
+```{r choco1}
 choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
 head(choco)
 ```
 
-Questions
-
-
-1. What is the overall number of chocolate bars rated?
-
-```{r}
-chocolate_observations <- dim(choco)[1]
-chocolate_observations
+```{r choco2}
+summary(choco)
+dim(choco)
 ```
 
-2. How does the number of ratings depend on the year? Draw a bar chart of the number of reports.
-
-```{r}
-library(ggplot2)
 ggplot(data=choco, aes(x=Review.Date)) + geom_bar()
+```{r choco3}
+library(ggplot2)
+ggplot(data=choco, aes( x = Rating)) + geom_histogram()
+#The majority of the ratings fall between 2.5 and 4. This graph is unimodel. There are outliers located at 5 and between 1 and less than 2.5.
 ```
 
-Review amounts increase upto year 2015 and then sharply declline.
-
-3. Upload your RMarkdown file to the repository
