@@ -1,0 +1,41 @@
+---
+title: "DS202-Lab2"
+author: "Joshua Limaye, group 1"
+date: "February 1, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
+```
+
+```{r}
+dim(choco)
+```
+There were 1852 bars rated
+
+```{r}
+library(ggplot2)
+ggplot(choco, aes(Review.Date)) +
+    xlab("Year") +
+    ylab("County") +
+    ggtitle("Count of Reviews by Year") +
+    geom_bar()
+```
+
+Count of ratings peaked in 2015, and then fell.
+
+```{r}
+library(dplyr)
+library(magrittr)
+
+comp <- choco %>% filter(Company.Location %in% c("U.S.A.","France","Canada"))
+
+ggplot(comp, aes(comp$Company.Location, Rating)) +
+    xlab("Top Three Countries") +
+    ylab("Chocoalte Rating") +
+    ggtitle("Box Plot of Chocolate Ratings by Location") +
+    geom_boxplot()
+```
+
+From the above boxplot, we can see that median rating are nearly identical across the three countries. Canada has the widest range of chocolate ratings. France has two outlying ratings and U.S.A. has one outlying rating. 
