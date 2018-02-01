@@ -1,0 +1,16 @@
+---
+title: "chocolate"
+date: "February 1, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Choco dataset obtained from [here](https://ds202-at-isu.github.io/labs/data/choco.csv)
+
+```{r}
+choco <- read.csv("https://ds202-at-isu.github.io/labs/data/choco.csv")
+head(choco)
+```
