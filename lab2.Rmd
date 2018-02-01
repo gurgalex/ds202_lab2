@@ -27,4 +27,11 @@ chocolate_observations
 
 2. How does the number of ratings depend on the year? Draw a bar chart of the number of reports.
 
+```{r}
+library(ggplot2)
+ggplot(data=choco, aes(x=Review.Date)) + geom_bar()
+```
+
+Review amounts increase upto year 2015 and then sharply declline.
+
 3. Upload your RMarkdown file to the repository
